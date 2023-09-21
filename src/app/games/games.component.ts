@@ -7,6 +7,7 @@ import { GameService } from '../game.service';
   templateUrl: './games.component.html',
   styleUrls: ['./games.component.css']
 })
+
 export class GamesComponent {
   games: Game[] = [];
   selectedGame?: Game;
@@ -23,10 +24,10 @@ export class GamesComponent {
         .subscribe(games => this.games = games);
   }
 
-  // getGame(id:number): void {
-  //   this.gameService.getGame(id)
-  //       .subscribe(games => console.log(games));
-  // }
+  searchGames(term: string): void {
+    this.gameService.searchGame(term)
+        .subscribe(games => this.games = games);
+  }
 
   ngOnInit(): void {
     this.getGames();
