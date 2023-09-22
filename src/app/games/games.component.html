@@ -5,5 +5,6 @@
 <div class="contenedor-flex-mf">
   <div *ngFor="let game of games">
     <app-game-card [game]="game"></app-game-card>
+    <app-detail [id]="game.id"></app-detail>
   </div>
 </div>
