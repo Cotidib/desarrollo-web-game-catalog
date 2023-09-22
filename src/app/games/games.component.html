@@ -1,13 +1,9 @@
-<input type="text" placeholder="Search a game" #search>
-<button class="primary" type="button" (click)="searchGames(search.value)">Search</button>
+<div class="input-group mb-3">
+  <input type="text" id="search-bar" placeholder="Search a game"  class="form-control" (keyup.enter)="searchGames(search.value)" #search>
+</div>
 
-<ul>
-  <li *ngFor="let game of games">
-    <button [class.selected]="game === selectedGame" type="button" (click)="onSelect(game)">
-      <span class="badge">{{game.id}}</span>
-      <span class="name">{{game.name}}</span>
-    </button>
-  </li>
-</ul>
-
-<app-detail [game]="selectedGame"></app-detail>
+<div class="contenedor-flex-mf">
+  <div *ngFor="let game of games">
+    <app-game-card [game]="game"></app-game-card>
+  </div>
+</div>

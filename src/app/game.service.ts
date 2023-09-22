@@ -20,13 +20,15 @@ export class GameService {
   private gamesUrl = 'https://api.rawg.io/api/games';
   private gamesApiKey = '80fa3c4695d04f74846ad5cdd0cc3d37';
   private options =  new HttpParams().set('key', this.gamesApiKey);
+  private page_size = 12;
 
   getGames(): Observable<Game[]>{
-    const getOptions = this.options.set('page_size', 9);
+    const getOptions = this.options.set('page_size', this.page_size);
     return this.http.get<Servergames>(this.gamesUrl, {params: getOptions}).pipe(
-      map((o: any) => o.results.map((gm: Game) => ({
+      map((o: any) => o.results.map((gm: Servergame) => ({
         id: gm.id,
-        name: gm.name
+        name: gm.name,
+        img: gm.short_screenshots[0].image
       })))
     );
   }
@@ -36,14 +38,15 @@ export class GameService {
     return this.http.get<Serverdetails>(gameUrlId, {params: this.options}).pipe(
       map((o: any) => ({
         id: o.id,
-        name: o.name
+        name: o.name,
+        description: o.description
       }))
     );
   }
 
   searchGame(term: string): Observable<Game[]> {
     // term = term.trim();
-    const searchOptions = this.options.set('search', term);
+    const searchOptions = this.options.set('search', term).set('page_size', this.page_size);
     return this.http.get<Servergame[]>(this.gamesUrl, {params: searchOptions}).pipe(
       map((o: any) => o.results.map((gm: Game) => ({
         id: gm.id,

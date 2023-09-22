@@ -1,0 +1,8 @@
+<div class="card list-item" id="item-{{game.id}}" data-bs-toggle="modal" [attr.data-bs-target]="'#detailsModal-'+game.id">
+  <img src={{game.img}} class="rounded"/>
+  <div class="overlay">
+    <span class="name p-1">{{game.name}}</span>
+  </div>
+</div>
+
+<app-detail [id]="game.id"></app-detail>

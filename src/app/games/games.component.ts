@@ -10,14 +10,8 @@ import { GameService } from '../game.service';
 
 export class GamesComponent {
   games: Game[] = [];
-  selectedGame?: Game;
 
   constructor(private gameService: GameService) {}
-
-  onSelect(game: Game): void {
-    this.gameService.getGame(game.id)
-      .subscribe(game => this.selectedGame = game)
-  }
 
   getGames(): void {
     this.gameService.getGames()
