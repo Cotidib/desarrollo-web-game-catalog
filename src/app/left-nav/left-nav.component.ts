@@ -6,7 +6,7 @@ import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
   styleUrls: ['./left-nav.component.css']
 })
 export class LeftNavComponent implements OnChanges {
-  @Input() navCompressed: boolean = false;
+  @Input() navCompressed: boolean = true;
 
   ngOnChanges(changes: SimpleChanges) {
       console.log("hola")

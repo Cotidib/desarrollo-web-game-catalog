@@ -44,7 +44,8 @@ header{
 #menu-btn{
   width: 40px;
   cursor: pointer;
-  /* z-index: 110; */
+  border: 1px solid white;
+  border-radius: 5px;
 }
 
 header span{
@@ -174,6 +175,12 @@ input:focus {
     flex-direction: row;
     flex-wrap: wrap;
   }
+}
+
+.modal-body img{
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
 }
 
 footer{

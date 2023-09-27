@@ -8,7 +8,7 @@ import { Component, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/
 })
 export class AppComponent {
   title = 'desarrollo-web-game-catalog';
-  navCompressed: boolean = false;
+  navCompressed: boolean = true;
 
   constructor(private changeDetector: ChangeDetectorRef) {};
 

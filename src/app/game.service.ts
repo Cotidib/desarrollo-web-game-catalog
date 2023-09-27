@@ -39,7 +39,8 @@ export class GameService {
       map((o: any) => ({
         id: o.id,
         name: o.name,
-        description: o.description
+        description: o.description,
+        img: o.background_image
       }))
     );
   }
