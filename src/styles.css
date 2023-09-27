@@ -56,7 +56,7 @@ header span{
 }
 
 nav{
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.95);
   color: white;
   position: absolute;
   width: 300px;
@@ -93,6 +93,7 @@ nav li{
 
 nav li:hover{
   border: 1px solid white;
+  border-radius: 5px;
 }
 
 nav a{
