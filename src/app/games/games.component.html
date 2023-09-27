@@ -1,10 +1,12 @@
-<div class="input-group mb-3">
-  <input type="text" id="search-bar" placeholder="Search a game"  class="form-control" (keyup.enter)="searchGames(search.value)" #search>
-</div>
-
-<div class="contenedor-flex-mf">
-  <div *ngFor="let game of games">
-    <app-game-card [game]="game"></app-game-card>
-    <app-detail [id]="game.id"></app-detail>
+<main>
+  <div class="input-group mb-3">
+    <input type="text" id="search-bar" placeholder="Search a game"  class="form-control" (keyup.enter)="searchGames(search.value)" #search>
   </div>
-</div>
+  
+  <div class="contenedor-flex-mf">
+    <div *ngFor="let game of games">
+      <app-game-card [game]="game"></app-game-card>
+      <app-detail [id]="game.id"></app-detail>
+    </div>
+  </div>
+</main>
