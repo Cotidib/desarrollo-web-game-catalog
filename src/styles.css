@@ -44,8 +44,11 @@ header{
 #menu-btn{
   width: 40px;
   cursor: pointer;
-  border: 1px solid white;
   border-radius: 5px;
+  box-shadow: inset 2px 2px 4px rgba(0,255,255,0.5), 
+  inset 4px 4px 8px rgba(0,255,255,0.5),
+  inset -2px -2px 4px rgba(0,255,255,0.5),
+  inset -4px -4px 8px rgba(0,255,255,0.5);
 }
 
 header span{
@@ -92,8 +95,11 @@ nav li{
 }
 
 nav li:hover{
-  border: 1px solid white;
   border-radius: 5px;
+  box-shadow: inset 2px 2px 4px rgba(0,255,255,0.5), 
+  inset 4px 4px 8px rgba(0,255,255,0.5),
+  inset -2px -2px 4px rgba(0,255,255,0.5),
+  inset -4px -4px 8px rgba(0,255,255,0.5);
 }
 
 nav a{
